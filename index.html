@@ -1,0 +1,61 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"><head>
+        <title>jQuery lawnMower Game Demo</title>
+		<style>
+			.container{
+				width: 400px;
+				margin:0 auto;
+			}
+			table,th,td{
+				border:1px solid black;
+			}
+			td{
+				padding: 15px;
+				height: 50px;
+				width: 50px;
+				text-align: center;
+			}
+			td.mowed{
+				background-color: green;
+			}
+		</style>
+    </head>
+    <body>
+		<div class="container">
+	        <p>jQuery lawnMower Game Demo</p>
+			<div id="lawn"></div>
+			<div id="binaryValue"></div>
+		</div>
+
+		<script type="text/javascript" src="js/jquery-1.9.0.min.js"></script>
+		<script type="text/javascript" src="js/mowLawn.js"></script>
+        <script type="text/javascript">
+		$().ready(function() {
+			$('body').data('foo', 52);
+			$("#lawn").lawnSize({
+				col: 5,
+				row: 5
+			});
+			$("#lawn").getBinary();
+			
+			$("body").keypress(function(e){
+				var code = (e.keyCode ? e.keyCode : e.which);
+				console.log(code);	
+				
+				if(code === 97){
+					// A - Left = 97
+				}
+				if(code === 119){
+					// W - Top = 119
+				}
+				if(code === 100){
+					// D - Right = 100
+				}
+				if(code === 115){
+					// S - Bottom = 115
+				}
+			});
+			
+		});
+        </script>
+	</body>
+</html>
